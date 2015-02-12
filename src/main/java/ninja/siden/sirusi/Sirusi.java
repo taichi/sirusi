@@ -27,7 +27,7 @@ import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.security.SecureRandom;
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
@@ -104,7 +104,7 @@ public class Sirusi {
 
 	public void render(String seed, int size, String formatName,
 			OutputStream out) throws IOException {
-		Random r = new SecureRandom(seed.getBytes());
+		Random r = new Random(new BigInteger(seed.getBytes()).longValue());
 		int[] kinds = { 5, 6, 7 };
 		int boxel = kinds[Math.abs(r.nextInt()) % 3];
 
