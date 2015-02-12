@@ -1,0 +1,46 @@
+plugins {
+	id "java"
+	id "eclipse"
+	id "us.kirchmeier.capsule" version "0.10.0"
+	id "nebula.info" version "2.2.0"
+	id "nebula.os-package" version "2.2.0"
+}
+
+repositories {
+	jcenter()
+	mavenCentral()
+}
+
+group = 'ninja.siden'
+version = '0.1.0'
+
+sourceCompatibility = targetCompatibility = 1.8
+
+tasks.withType(AbstractCompile)*.options*.encoding = "UTF-8"
+
+test { systemProperty("java.awt.headless", "true") }
+
+dependencies {
+	compile 'ninja.siden:siden-core:0.4.0'
+	runtime 'org.jolokia:jolokia-jvm:1.2.3:agent'
+	testCompile 'org.jmockit:jmockit:1.+'
+	testCompile 'junit:junit:4.+'
+}
+
+task stage(type: FatCapsule, dependsOn: 'clean') {
+	applicationClass "ninja.siden.sirusi.Sirusi"
+	reallyExecutable
+	capsuleManifest {
+		systemProperties = ['java.awt.headless': true]
+		environmentVariables = [SIDEN_ENV:'production']
+		javaAgents  << "org.jolokia:jolokia-jvm:1.2.3:agent=a,port=7777,host=localhost"
+	}
+}
+
+eclipse {
+	classpath {
+		containers = [
+			'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+		]
+	}
+}
