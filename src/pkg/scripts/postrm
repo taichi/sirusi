@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rm -rf /opt/sirusi
+rm -rf /var/log/sirusi
+rm -rf /var/lib/sirusi

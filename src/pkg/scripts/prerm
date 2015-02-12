@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ $1 = "remove" ]; then
+  initctl stop sirusi >/dev/null 2>&1 || true
+
+  if getent passwd sirusi >/dev/null ; then
+    userdel sirusi
+  fi
+
+  if getent group sirusi >/dev/null ; then
+    groupdel sirusi
+  fi
+fi

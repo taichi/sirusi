@@ -1,0 +1,5 @@
+#!/bin/sh
+
+chown -R sirusi:sirusi /opt/sirusi
+chown sirusi /var/log/sirusi
+chown sirusi:sirusi /var/lib/sirusi

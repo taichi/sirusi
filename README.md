@@ -10,8 +10,8 @@ create indenticons similar to [Github](https://github.com/blog/1586-identicons) 
 execute commands below
 
 ```
-gradlew stage
-java -jar build/libs/sirusi-capsule.jar
+./gradlew installApp
+./build/install/sirusi/bin/sirusi
 ```
 
 and access to `http://localhost:8080/0000.png?s=96` you will see below
@@ -27,6 +27,19 @@ Sirusi supported url template is `/{seed}.{type}?s={size}`
     * default type is png
 * size
     * default size is 48. this means 48x48 pixel png will be generate.
+
+## Install to Ubuntu
+
+```
+./gradlew buildDeb
+sudo gdebi build/distributions/sirusi_0.1.0_all.deb
+```
+
+## Uninstall from Ubuntu
+
+```
+sudo apt-get remove sirusi
+```
 
 ## Similar projects
 

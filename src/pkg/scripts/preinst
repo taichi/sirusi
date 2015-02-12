@@ -1,0 +1,18 @@
+#!/bin/sh
+
+mkdir -p /opt/sirusi/lib
+mkdir -p /opt/sirusi/bin
+mkdir -p /var/lib/sirusi
+mkdir -p /var/log/sirusi
+
+# create sirusi group
+if ! getent group sirusi >/dev/null; then
+  groupadd -r sirusi
+fi
+
+# create sirusi user
+if ! getent passwd sirusi >/dev/null; then
+  useradd -M -r -g sirusi -d /var/lib/sirusi \
+    -s /usr/sbin/nologin -c "Sirusi Service User" sirusi
+fi
+
