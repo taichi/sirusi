@@ -43,9 +43,10 @@ sudo apt-get remove sirusi
 
 ## Similar projects
 
-* [donpark/identicon](https://github.com/donpark/identicon)
-* [davidhampgonsalves/Contact-Identicons](https://github.com/davidhampgonsalves/Contact-Identicons)
-* [sehrgut/node-retricon](https://github.com/sehrgut/node-retricon)
+* Java [donpark/identicon](https://github.com/donpark/identicon)
+* Java/Android [davidhampgonsalves/Contact-Identicons](https://github.com/davidhampgonsalves/Contact-Identicons)
+* node.js [sehrgut/node-retricon](https://github.com/sehrgut/node-retricon)
+* golang [cupcake/sigil](https://github.com/cupcake/sigil)
 
 
 # License
