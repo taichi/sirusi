@@ -1,0 +1,44 @@
+buildscript {
+	repositories {
+		maven { url "https://maven-central.storage.googleapis.com" }
+		mavenCentral()
+		maven { url "https://plugins.gradle.org/m2/" }
+	}
+}
+
+plugins {
+	id 'java'
+	id 'eclipse'
+}
+
+repositories {
+	maven { url "https://maven-central.storage.googleapis.com" }
+	jcenter()
+	mavenCentral()
+}
+
+sourceCompatibility = targetCompatibility = 1.8
+
+tasks.withType(AbstractCompile)*.options*.encoding = "UTF-8"
+
+test {
+	systemProperty('java.awt.headless', true)
+}
+
+dependencies {
+	compile 'com.amazonaws:aws-lambda-java-core:1.1.0'
+	compile 'com.amazonaws:aws-lambda-java-events:1.1.0'
+	
+	testCompile 'org.mockito:mockito-core:1.+'
+	testCompile 'junit:junit:4.+'
+}
+
+task buildZip(type: Zip) {
+	from compileJava
+	from processResources
+	into('lib') {
+		from configurations.runtime
+	}
+}
+
+build.dependsOn buildZip
