@@ -1,9 +1,9 @@
 # Sirusi
 create indenticons similar to [Github](https://github.com/blog/1586-identicons) and [Gravatar (retro)](https://en.gravatar.com/site/implement/images/) avatars.
 
-![5x5](https://raw.githubusercontent.com/taichi/sirusi/master/src/docs/5x5.png)
-![6x6](https://raw.githubusercontent.com/taichi/sirusi/master/src/docs/6x6.png)
-![7x7](https://raw.githubusercontent.com/taichi/sirusi/master/src/docs/7x7.png)
+![5x5](https://raw.githubusercontent.com/taichi/sirusi/master/standalone/src/docs/5x5.png)
+![6x6](https://raw.githubusercontent.com/taichi/sirusi/master/standalone/src/docs/6x6.png)
+![7x7](https://raw.githubusercontent.com/taichi/sirusi/master/standalone/src/docs/7x7.png)
 
 ## Getting Started
 
@@ -16,7 +16,7 @@ execute commands below
 
 and access to `http://localhost:8080/0000.png?s=96` you will see below
 
-![0000](https://raw.githubusercontent.com/taichi/sirusi/master/src/docs/0000.png)
+![0000](https://raw.githubusercontent.com/taichi/sirusi/master/standalone/src/docs/0000.png)
 
 Sirusi supported url template is `/{seed}.{type}?s={size}`
 
