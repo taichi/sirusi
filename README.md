@@ -11,7 +11,7 @@ execute commands below
 
 ```
 ./gradlew installApp
-./build/install/sirusi/bin/sirusi
+./standalone/build/install/sirusi/bin/sirusi
 ```
 
 and access to `http://localhost:8080/0000.png?s=96` you will see below

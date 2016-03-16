@@ -1,1 +1,5 @@
 include 'standalone', 'aws'
+
+rootProject.name = "master"
+project(":standalone").name = "sirusi"
+project(":aws").name = "aws.sirusi"
